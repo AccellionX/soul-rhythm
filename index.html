@@ -3,59 +3,133 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Soul Rhythm</title>
+  <title>Soul Rhythm | A place to discover</title>
   <meta name="description" content="A place to explore possibilities, perspectives, and ideas.">
+  <meta name="theme-color" content="#f6efe4">
+  <link rel="canonical" href="https://ali58645.github.io/soul-rythm/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Soul Rhythm">
+  <meta property="og:title" content="Soul Rhythm | A place to discover">
+  <meta property="og:description" content="A place to explore possibilities, perspectives, and ideas.">
+  <meta property="og:url" content="https://ali58645.github.io/soul-rythm/">
+  <meta property="og:image" content="https://ali58645.github.io/soul-rythm/images/porch.jpg">
+  <meta property="og:image:alt" content="A welcoming front porch with a heart sign, bird feeder, book, and metal art">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Soul Rhythm | A place to discover">
+  <meta name="twitter:description" content="A place to explore possibilities, perspectives, and ideas.">
+  <meta name="twitter:image" content="https://ali58645.github.io/soul-rythm/images/porch.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="images/neighborhood.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      if (location.protocol !== "http:" && location.protocol !== "https:") return;
+      var base = location.origin + location.pathname.replace(/[^/]*$/, "");
+      var image = base + "images/porch.jpg";
+      var page = base;
+      var map = { canonical: page, "og:url": page, "og:image": image, "twitter:image": image };
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.href = page;
+      document.querySelectorAll("meta[property], meta[name]").forEach(function (tag) {
+        var key = tag.getAttribute("property") || tag.getAttribute("name");
+        if (map[key]) tag.setAttribute("content", map[key]);
+      });
+    })();
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#app">Skip to content</a>
+  <a class="skip-link" id="skip-link" href="#app">Skip to content</a>
 
-  <button type="button" class="home-btn" id="home-btn" hidden>
-    Soul Rhythm ⌂
+  <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="where-to">
+    <span class="menu-mark" aria-hidden="true">SR</span>
+    <span class="sr-only">Where to?</span>
   </button>
 
   <div class="badge" aria-hidden="true">Prototype · placeholder visuals</div>
 
   <footer class="proto-footer">
+    <button type="button" class="sounds-toggle" id="sounds-toggle" aria-pressed="false">
+      <svg class="icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+        <path class="waves" d="M16 8.5a4.5 4.5 0 010 7M18.5 6a8 8 0 010 12"></path>
+      </svg>
+      <span id="sounds-label">Sounds off</span>
+    </button>
+    <button type="button" class="text-link" data-go="edit-preview" id="edit-link">See how you'd edit this →</button>
     <button type="button" class="text-link" id="reset-prototype">Reset prototype</button>
   </footer>
 
-  <div id="app" class="app">
+  <div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+
+  <aside class="drawer" id="where-to" role="dialog" aria-modal="true" aria-labelledby="where-to-title" hidden>
+    <div class="drawer-inner">
+      <h2 id="where-to-title" data-copy="whereTo.heading">Where to?</h2>
+      <p class="drawer-sub" data-copy="whereTo.subtitle">Everything is a short walk from the porch.</p>
+      <div class="where-large" id="where-large"></div>
+      <div class="where-small" id="where-small"></div>
+      <section class="say-hello" id="say-hello"></section>
+      <section class="visit-card" id="visit-card"></section>
+      <p><button type="button" class="text-link" data-go="edit-preview" id="edit-link-drawer">See how you'd edit this →</button></p>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="bag-drawer" role="dialog" aria-modal="true" aria-labelledby="bag-title" hidden>
+    <div class="drawer-inner">
+      <h2 id="bag-title">Your bag</h2>
+      <div id="bag-list"></div>
+      <p class="bag-total" id="bag-total"></p>
+      <button type="button" class="btn" id="bag-checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <div id="app" class="app" tabindex="-1">
     <section class="screen" data-screen="neighborhood" aria-label="Neighborhood">
       <div class="scene scene--neighborhood">
         <div class="scene-ph" aria-hidden="true"><span>Neighborhood</span></div>
-        <img class="scene-photo" src="images/neighborhood.jpg" alt="A tree-lined neighborhood street in warm evening light" width="1600" height="1067">
+        <picture class="scene-frame">
+          <source type="image/webp" srcset="images/neighborhood.webp">
+          <img class="scene-photo" src="images/neighborhood.jpg" alt="A tree-lined neighborhood street in warm evening light" width="1672" height="941" fetchpriority="high" decoding="async">
+        </picture>
         <div class="scene-shade"></div>
         <div class="scene-body">
           <div class="panel hero-copy" data-seq>
-            <h1 class="seq-item">Welcome to Soul Rhythm.</h1>
-            <p class="seq-item">A place to explore possibilities, perspectives, and ideas.</p>
-            <p class="seq-item">Take a look around. There is lots to discover. There's no rush.</p>
-            <button type="button" class="btn seq-item" data-go="porch">Explore Soul Rhythm</button>
-            <p class="direct-note seq-item">Or, if you came looking for something specific, you can head there directly.</p>
+            <h1 class="seq-item" data-copy="welcome.heading">Welcome to Soul Rhythm.</h1>
+            <p class="seq-item" data-copy="welcome.line1">A place to explore possibilities, perspectives, and ideas.</p>
+            <p class="seq-item" data-copy="welcome.line2">Take a look around. There is lots to discover. There's no rush.</p>
+            <button type="button" class="btn seq-item" data-go="porch" data-walk="50,55" data-copy="welcome.explore">Explore Soul Rhythm</button>
+            <p class="direct-note seq-item" data-copy="welcome.direct">Or, if you came looking for something specific, you can head there directly.</p>
           </div>
           <div class="space-cards seq-item" data-seq-late>
-            <a class="space-card" href="#journey" data-go="journey">
+            <a class="space-card" href="#/journey" data-go="journey">
               <div class="thumb scene--pond">
                 <div class="scene-ph" aria-hidden="true"><span>Pond</span></div>
-                <img class="scene-photo" src="images/pond.jpg" alt="A quiet pond surrounded by trees" width="640" height="400">
+                <picture class="scene-frame">
+                  <source type="image/webp" srcset="images/pond.webp">
+                  <img class="scene-photo" src="images/pond.jpg" alt="A quiet pond surrounded by trees" width="640" height="400" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span>Journey</span>
             </a>
-            <a class="space-card" href="#stories" data-go="stories">
+            <a class="space-card" href="#/stories" data-go="stories">
               <div class="thumb scene--study">
                 <div class="scene-ph" aria-hidden="true"><span>Study</span></div>
-                <img class="scene-photo" src="images/study.jpg" alt="A warm study with books and a reading chair" width="640" height="400">
+                <picture class="scene-frame">
+                  <source type="image/webp" srcset="images/study.webp">
+                  <img class="scene-photo" src="images/study.jpg" alt="A warm study with books and a reading chair" width="640" height="400" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span>Stories</span>
             </a>
-            <a class="space-card" href="#consulting" data-go="consulting">
+            <a class="space-card" href="#/consulting" data-go="consulting">
               <div class="thumb scene--garage">
                 <div class="scene-ph" aria-hidden="true"><span>Garage</span></div>
-                <img class="scene-photo" src="images/garage.jpg" alt="A converted garage workspace with a whiteboard" width="640" height="400">
+                <picture class="scene-frame">
+                  <source type="image/webp" srcset="images/garage.webp">
+                  <img class="scene-photo" src="images/garage.jpg" alt="A converted garage workspace with a whiteboard" width="640" height="400" loading="lazy" decoding="async">
+                </picture>
               </div>
               <span>Consulting</span>
             </a>
@@ -66,38 +140,45 @@
 
     <section class="screen" data-screen="porch" aria-label="Porch">
       <div class="porch-layout">
-        <p class="welcome-back" id="welcome-back" hidden>Welcome back.</p>
+        <p class="welcome-back" id="welcome-back" hidden data-copy="porch.welcomeBack">Welcome back.</p>
         <div class="scene scene--porch porch-stage">
           <div class="scene-ph" aria-hidden="true"><span>Porch</span></div>
-          <img class="scene-photo" src="images/porch.jpg" alt="A welcoming front porch with a heart sign, bird feeder, book, and metal art" width="1600" height="900">
+          <picture class="scene-frame">
+            <source type="image/webp" srcset="images/porch.webp">
+            <img class="scene-photo" src="images/porch.jpg" alt="A welcoming front porch with a heart sign, bird feeder, book, and metal art" width="1672" height="941" loading="lazy" decoding="async">
+          </picture>
           <div class="scene-shade scene-shade--soft"></div>
           <div class="hotspots" id="hotspots"></div>
         </div>
-        <nav class="porch-nav" aria-label="Porch spaces">
-          <button type="button" data-go="journey">Journey</button>
-          <button type="button" data-go="stories">Stories</button>
-          <button type="button" data-go="consulting">Consulting</button>
-          <button type="button" data-go="meet-lori">Meet Lori</button>
-        </nav>
+        <nav class="porch-nav" id="porch-nav" aria-label="Porch spaces"></nav>
         <div class="quick-access" id="quick-access" hidden>
-          <a class="space-card space-card--compact" href="#journey" data-go="journey">
+          <a class="space-card space-card--compact" href="#/journey" data-go="journey">
             <div class="thumb scene--pond">
               <div class="scene-ph" aria-hidden="true"><span>Pond</span></div>
-              <img class="scene-photo" src="images/pond.jpg" alt="" width="640" height="400">
+              <picture class="scene-frame">
+                <source type="image/webp" srcset="images/pond.webp">
+                <img class="scene-photo" src="images/pond.jpg" alt="" width="640" height="400" loading="lazy" decoding="async">
+              </picture>
             </div>
             <span>Journey</span>
           </a>
-          <a class="space-card space-card--compact" href="#stories" data-go="stories">
+          <a class="space-card space-card--compact" href="#/stories" data-go="stories">
             <div class="thumb scene--study">
               <div class="scene-ph" aria-hidden="true"><span>Study</span></div>
-              <img class="scene-photo" src="images/study.jpg" alt="" width="640" height="400">
+              <picture class="scene-frame">
+                <source type="image/webp" srcset="images/study.webp">
+                <img class="scene-photo" src="images/study.jpg" alt="" width="640" height="400" loading="lazy" decoding="async">
+              </picture>
             </div>
             <span>Stories</span>
           </a>
-          <a class="space-card space-card--compact" href="#consulting" data-go="consulting">
+          <a class="space-card space-card--compact" href="#/consulting" data-go="consulting">
             <div class="thumb scene--garage">
               <div class="scene-ph" aria-hidden="true"><span>Garage</span></div>
-              <img class="scene-photo" src="images/garage.jpg" alt="" width="640" height="400">
+              <picture class="scene-frame">
+                <source type="image/webp" srcset="images/garage.webp">
+                <img class="scene-photo" src="images/garage.jpg" alt="" width="640" height="400" loading="lazy" decoding="async">
+              </picture>
             </div>
             <span>Consulting</span>
           </a>
@@ -105,18 +186,37 @@
       </div>
     </section>
 
+    <section class="screen screen--page" data-screen="meet-lori" aria-label="Meet Lori">
+      <div class="page-block meet-page">
+        <button type="button" class="text-link" data-go="porch" data-copy="meetLori.back">Back to the porch</button>
+        <p class="meet-label" data-copy="meetLori.label">MEET LORI</p>
+        <h1 data-copy="meetLori.heading">A short hello from Lori</h1>
+        <p data-copy="meetLori.intro">Lori put together a few words of welcome. It takes about a minute. Watch now, or come back to it any time.</p>
+        <button type="button" class="meet-poster" id="meet-play">
+          <picture>
+            <source type="image/webp" srcset="images/porch.webp">
+            <img src="images/porch.jpg" alt="" width="1672" height="941">
+          </picture>
+          <span class="play-icon" aria-hidden="true"></span>
+          <span class="meet-play-label" data-copy="meetLori.play">Play Lori's welcome</span>
+        </button>
+        <details class="transcript">
+          <summary data-copy="meetLori.transcriptToggle">Read the transcript</summary>
+          <p data-copy="meetLori.transcript"></p>
+        </details>
+        <p data-copy="meetLori.noRush">There's no rush. Look around.</p>
+        <a class="text-link" id="meet-talk" href="https://calendly.com" target="_blank" rel="noopener noreferrer" data-copy="meetLori.talk">If you'd like to talk, I'm here</a>
+      </div>
+    </section>
+
     <section class="screen" data-screen="journey" aria-label="Journey">
       <div class="scene scene--pond">
         <div class="scene-ph" aria-hidden="true"><span>Pond</span></div>
-        <img class="scene-photo" src="images/pond.jpg" alt="A still pond at the edge of the woods" width="1600" height="1067">
+        <picture class="scene-frame">
+          <source type="image/webp" srcset="images/pond.webp">
+          <img class="scene-photo" src="images/pond.jpg" alt="A still pond at the edge of the woods" width="1672" height="941" loading="lazy" decoding="async">
+        </picture>
         <div class="scene-shade"></div>
-        <button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="false" aria-label="Play pond sounds">
-          <svg class="icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
-            <path class="waves" d="M16 8.5a4.5 4.5 0 010 7M18.5 6a8 8 0 010 12"></path>
-          </svg>
-        </button>
-        <audio id="pond-audio" src="audio/pond.mp3" loop preload="none"></audio>
         <div class="scene-body scene-body--journey">
           <div class="panel journey-panel" id="journey-panel" aria-live="polite"></div>
         </div>
@@ -126,13 +226,18 @@
     <section class="screen" data-screen="stories" aria-label="Stories">
       <div class="scene scene--study">
         <div class="scene-ph" aria-hidden="true"><span>Study</span></div>
-        <img class="scene-photo" src="images/study.jpg" alt="A sunlit study with shelves of books" width="1600" height="1067">
+        <picture class="scene-frame">
+          <source type="image/webp" srcset="images/study.webp">
+          <img class="scene-photo" src="images/study.jpg" alt="A sunlit study with shelves of books" width="1672" height="941" loading="lazy" decoding="async">
+        </picture>
         <div class="scene-shade"></div>
         <div class="scene-body">
           <div class="panel">
-            <h1>Soul Rhythm Stories is a place to settle in and explore.</h1>
-            <p>Here you'll find stories and ideas that may make you wonder, think differently, discover something you didn't know, or simply leave you wanting to know more.</p>
-            <button type="button" class="btn" data-go="stories-collection">Explore Stories</button>
+            <h1 data-copy="stories.heading">Soul Rhythm Stories is a place to settle in and explore.</h1>
+            <p data-copy="stories.intro">Here you'll find stories and ideas that may make you wonder, think differently, discover something you didn't know, or simply leave you wanting to know more.</p>
+            <button type="button" class="btn" data-go="stories-collection" data-copy="stories.explore">Explore Stories</button>
+            <p class="looking" data-copy="stories.looking">Looking for something in particular?</p>
+            <div class="quick-links" id="story-quick-links"></div>
           </div>
         </div>
       </div>
@@ -141,18 +246,13 @@
     <section class="screen screen--page" data-screen="stories-collection" aria-label="Stories collection">
       <div class="collection">
         <header class="collection-head">
-          <h1>Soul Rhythm Stories</h1>
-          <label class="search-label" for="story-search">Search</label>
+          <h1 data-copy="stories.collectionTitle">Soul Rhythm Stories</h1>
+          <label class="search-label" for="story-search" data-copy="stories.searchLabel">Search</label>
           <input id="story-search" class="search" type="search" placeholder="Search stories" autocomplete="off">
-          <div class="chips" id="story-filters" role="group" aria-label="Filter stories">
-            <button type="button" class="chip is-on" data-filter="All" aria-pressed="true">All</button>
-            <button type="button" class="chip" data-filter="Books" aria-pressed="false">Books</button>
-            <button type="button" class="chip" data-filter="Movies" aria-pressed="false">Movies</button>
-            <button type="button" class="chip" data-filter="Streaming" aria-pressed="false">Streaming</button>
-            <button type="button" class="chip" data-filter="New" aria-pressed="false">New</button>
-            <button type="button" class="chip" data-filter="Recommended" aria-pressed="false">Recommended</button>
-          </div>
+          <div class="chips" id="story-filters" role="group" aria-label="Filter stories"></div>
         </header>
+        <h2 class="featured-title" id="featured-title">Featured this month</h2>
+        <div class="featured-row" id="featured-row"></div>
         <div class="story-grid" id="story-grid"></div>
         <p class="empty-note" id="story-empty" hidden>No stories match that just yet.</p>
         <footer class="collection-foot">
@@ -161,51 +261,57 @@
             <span aria-hidden="true"> / </span>
             <button type="button" class="text-link" data-go="porch">Return to Soul Rhythm</button>
           </p>
-          <p class="store-note">Store and checkout powered by WooCommerce or Shopify in the real build.</p>
+          <p class="store-note" data-copy="stories.storeNote">Store and checkout powered by WooCommerce or Shopify in the real build.</p>
         </footer>
+      </div>
+    </section>
+
+    <section class="screen screen--page" data-screen="story-item" aria-label="Story">
+      <div class="page-block item-page" id="item-page"></div>
+    </section>
+
+    <section class="screen screen--page" data-screen="thank-you" aria-label="Thank you">
+      <div class="page-block thank-page">
+        <h1 data-copy="checkout.heading">Your order is on its way. Thank you for supporting Soul Rhythm.</h1>
+        <button type="button" class="btn" data-go="stories-collection" data-copy="checkout.continue">Continue exploring Stories</button>
+        <button type="button" class="btn btn-soft" data-go="porch" data-copy="checkout.porch">Return to the porch</button>
+        <p class="store-note" data-copy="checkout.note">Real checkout powered by Shopify/WooCommerce in the full build.</p>
       </div>
     </section>
 
     <section class="screen" data-screen="consulting" aria-label="Consulting">
       <div class="scene scene--garage">
         <div class="scene-ph" aria-hidden="true"><span>Garage</span></div>
-        <img class="scene-photo" src="images/garage.jpg" alt="A garage studio with a handwritten whiteboard" width="1600" height="1067">
+        <picture class="scene-frame">
+          <source type="image/webp" srcset="images/garage.webp">
+          <img class="scene-photo" src="images/garage.jpg" alt="A garage studio with a handwritten whiteboard" width="1672" height="941" loading="lazy" decoding="async">
+        </picture>
         <div class="scene-shade"></div>
         <div class="scene-body">
-          <div class="whiteboard" aria-label="Whiteboard">
-            <p class="wb-line wb-1">What are you thinking about?</p>
-            <p class="wb-arrow" aria-hidden="true">↓</p>
-            <p class="wb-line wb-2">Why does it matter?</p>
-            <p class="wb-arrow" aria-hidden="true">↓</p>
-            <p class="wb-line wb-3">What's possible?</p>
+          <div class="whiteboard" id="whiteboard" aria-label="Whiteboard">
+            <svg class="wb-svg" viewBox="0 0 320 168" role="img">
+              <title>What are you thinking about? Why does it matter? What's possible?</title>
+              <text class="wb-stroke wb-s1" x="10" y="36">What are you thinking about?</text>
+              <path class="wb-stroke wb-a1" d="M40 50 L40 70"></path>
+              <text class="wb-stroke wb-s2" x="10" y="98">Why does it matter?</text>
+              <path class="wb-stroke wb-a2" d="M40 112 L40 132"></path>
+              <text class="wb-stroke wb-s3" x="10" y="158">What's possible?</text>
+            </svg>
           </div>
           <div class="panel consulting-panel" id="consulting-panel" aria-live="polite"></div>
         </div>
       </div>
     </section>
-  </div>
 
-  <div class="modal" id="meet-lori" hidden>
-    <div class="modal-backdrop" data-close-meet></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="meet-lori-title">
-      <div class="video-ph" aria-hidden="true">
-        <span class="play-icon"></span>
-        <span>Lori's welcome video</span>
+    <section class="screen screen--page screen--editor" data-screen="edit-preview" aria-label="Edit preview">
+      <div class="editor-layout">
+        <aside class="editor-panel">
+          <p class="editor-banner" data-copy="editor.banner">This is a preview of how you'd edit your own content. In the real build this is your CMS.</p>
+          <div id="editor-fields"></div>
+        </aside>
+        <div class="editor-preview" id="editor-preview" aria-live="polite"></div>
       </div>
-      <h2 id="meet-lori-title" class="sr-only">Lori's welcome video</h2>
-      <p class="caption">A quick hello from Lori.</p>
-      <button type="button" class="btn" id="close-meet">Back to the porch</button>
-    </div>
-  </div>
-
-  <div class="modal" id="story-detail" hidden>
-    <div class="modal-backdrop" data-close-story></div>
-    <div class="modal-card modal-card--story" role="dialog" aria-modal="true" aria-labelledby="story-detail-title">
-      <h2 id="story-detail-title"></h2>
-      <p id="story-detail-line"></p>
-      <p class="story-meta" id="story-detail-meta"></p>
-      <button type="button" class="btn" id="close-story">Continue exploring Stories</button>
-    </div>
+    </section>
   </div>
 
   <script src="app.js"></script>

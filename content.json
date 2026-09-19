@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "title": "Soul Rhythm | A place to discover",
+    "description": "A place to explore possibilities, perspectives, and ideas.",
+    "calendly": "https://calendly.com"
+  },
+  "welcome": {
+    "heading": "Welcome to Soul Rhythm.",
+    "line1": "A place to explore possibilities, perspectives, and ideas.",
+    "line2": "Take a look around. There is lots to discover. There's no rush.",
+    "explore": "Explore Soul Rhythm",
+    "direct": "Or, if you came looking for something specific, you can head there directly."
+  },
+  "porch": {
+    "welcomeBack": "Welcome back.",
+    "hotspots": [
+      { "id": "bird-feeder", "name": "Journey", "detail": "the bird feeder", "target": "journey", "x": 24, "y": 12 },
+      { "id": "book", "name": "Stories", "detail": "the books", "target": "stories", "x": 49, "y": 48 },
+      { "id": "metal-art", "name": "Consulting", "detail": "the metal art", "target": "consulting", "x": 91, "y": 26 },
+      { "id": "heart-sign", "name": "Meet Lori", "detail": "the heart", "target": "meet-lori", "x": 63, "y": 23, "pulse": true }
+    ]
+  },
+  "meetLori": {
+    "back": "Back to the porch",
+    "label": "MEET LORI",
+    "heading": "A short hello from Lori",
+    "intro": "Lori put together a few words of welcome. It takes about a minute. Watch now, or come back to it any time.",
+    "play": "Play Lori's welcome",
+    "transcriptToggle": "Read the transcript",
+    "transcript": "Hi, I'm Lori. Welcome to Soul Rhythm. I made this place as a porch light — somewhere you can sit for a minute, look around, and see what stirs. There's no right way to wander. Come as you are.",
+    "noRush": "There's no rush. Look around.",
+    "talk": "If you'd like to talk, I'm here"
+  },
+  "journey": {
+    "q1": "What sort of experiences or activities fill you up?",
+    "bridge": "Okay, let's start there.",
+    "q2": "What is it about that activity or experience that gives you energy?",
+    "close": "Sometimes all it takes is a moment to notice. And sometimes, that moment makes us curious about what might be possible. If you'd like to keep exploring, I'm here.",
+    "continue": "Continue the conversation",
+    "finePrint": "It can take as little or as much time as you have.",
+    "back": "Back to the porch"
+  },
+  "stories": {
+    "heading": "Soul Rhythm Stories is a place to settle in and explore.",
+    "intro": "Here you'll find stories and ideas that may make you wonder, think differently, discover something you didn't know, or simply leave you wanting to know more.",
+    "explore": "Explore Stories",
+    "looking": "Looking for something in particular?",
+    "collectionTitle": "Soul Rhythm Stories",
+    "searchLabel": "Search",
+    "searchPlaceholder": "Search stories",
+    "featuredTitle": "Featured this month",
+    "empty": "No stories match that just yet.",
+    "continue": "Continue exploring Stories",
+    "return": "Return to Soul Rhythm",
+    "storeNote": "Store and checkout powered by WooCommerce or Shopify in the real build.",
+    "addToBag": "Add to bag",
+    "whereTo": "Where to watch/read",
+    "whereNote": "A recommendation — find it wherever you like to watch or read.",
+    "lorisPick": "Lori's pick",
+    "quickLinks": [
+      { "label": "Books", "filter": "Books" },
+      { "label": "Films", "filter": "Films" },
+      { "label": "Series", "filter": "Series" },
+      { "label": "New on the shelf", "filter": "New" }
+    ],
+    "filters": ["All", "Books", "Films", "Series", "New", "Recommended"],
+    "items": [
+      {
+        "id": "gift-of-rest",
+        "title": "The Gift of Rest",
+        "author": "Mara Ellison",
+        "line": "A quiet invitation to reclaim unhurried time.",
+        "note": "Lori comes back to this whenever the week starts to hurry her. It is a small book that makes more room.",
+        "price": "$18",
+        "forSale": true,
+        "format": "Books",
+        "tags": ["Books"],
+        "featured": true,
+        "lorisPick": true
+      },
+      {
+        "id": "porch-light",
+        "title": "Porch Light",
+        "author": "James Whitaker",
+        "line": "Essays on noticing what's already here.",
+        "note": "These essays feel like sitting outside at dusk. Lori loves how they ask almost nothing of you except attention.",
+        "price": "$22",
+        "forSale": true,
+        "format": "Books",
+        "tags": ["Books"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "finding-your-rhythm",
+        "title": "Finding Your Rhythm",
+        "author": "Lena Ortiz",
+        "line": "A field guide for living at a human pace.",
+        "note": "Practical without being pushy. Lori keeps it on the study table for anyone who is ready to try a gentler tempo.",
+        "price": "$24",
+        "forSale": true,
+        "format": "Books",
+        "tags": ["Books", "New"],
+        "featured": true,
+        "lorisPick": false
+      },
+      {
+        "id": "letters-from-the-garden",
+        "title": "Letters from the Garden",
+        "author": "Helen Brooks",
+        "line": "Correspondence on growing and letting go.",
+        "note": "Lori loves the patience in these letters — how they treat growing as a conversation, not a project.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Books",
+        "tags": ["Books", "New"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "quiet-enough",
+        "title": "Quiet Enough",
+        "author": "Thomas Reed",
+        "line": "A companion for nights when the house finally settles.",
+        "note": "Not a how-to. Lori recommends it when someone needs company more than advice.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Books",
+        "tags": ["Books"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "the-unhurried-life",
+        "title": "The Unhurried Life",
+        "author": "Sofia Nguyen",
+        "line": "Stories of people who chose a slower yes.",
+        "note": "This is one of Lori's picks because it never scolds. It just shows what becomes possible when you stop rushing.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Books",
+        "tags": ["Books", "Recommended"],
+        "featured": false,
+        "lorisPick": true
+      },
+      {
+        "id": "still-waters",
+        "title": "Still Waters",
+        "author": "Amina Cole",
+        "line": "A film about returning home and beginning again.",
+        "note": "Lori loves the quiet middle of this film — the part where nothing big happens and everything changes.",
+        "price": "$4.99",
+        "forSale": true,
+        "format": "Films",
+        "tags": ["Films"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "the-long-walk-home",
+        "title": "The Long Walk Home",
+        "author": "David Lang",
+        "line": "Two friends, one road, many questions.",
+        "note": "A Lori pick for anyone who thinks they need a map before they start. The conversation is the path.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Films",
+        "tags": ["Films", "Recommended"],
+        "featured": true,
+        "lorisPick": true
+      },
+      {
+        "id": "evening-light",
+        "title": "Evening Light",
+        "author": "Nora Hale",
+        "line": "A short film about the last hour of an ordinary day.",
+        "note": "Lori watches this when she wants to remember that ordinary hours are enough.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Films",
+        "tags": ["Films"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "morning-pages",
+        "title": "Morning Pages",
+        "author": "Priya Shah",
+        "line": "A short series on daily creative practice.",
+        "note": "Gentle episodes. Lori likes that you can start on any morning and not feel behind.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Series",
+        "tags": ["Series", "Recommended"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "kitchen-table-talks",
+        "title": "Kitchen Table Talks",
+        "author": "Evan Cole",
+        "line": "Conversations that wander toward what matters.",
+        "note": "These talks sound like they could have happened on Lori's porch. She keeps them close for that reason.",
+        "price": "$3.99",
+        "forSale": true,
+        "format": "Series",
+        "tags": ["Series"],
+        "featured": false,
+        "lorisPick": false
+      },
+      {
+        "id": "porch-season",
+        "title": "Porch Season",
+        "author": "Clara West",
+        "line": "A new series about staying put and looking again.",
+        "note": "New on the shelf. Lori is still sitting with it — and already handing it to people who need permission to stay.",
+        "price": "Recommendation",
+        "forSale": false,
+        "format": "Series",
+        "tags": ["Series", "New"],
+        "featured": false,
+        "lorisPick": false
+      }
+    ]
+  },
+  "consulting": {
+    "line1": "What are you thinking about?",
+    "line2": "Why does it matter?",
+    "line3": "What's possible?",
+    "q1": "What's got you thinking?",
+    "q2": "Interesting. What makes this matter to you?",
+    "q3": "Want to talk it through?",
+    "thanks": "Thanks for sharing that. Ideas don't have to be finished before we talk about them.",
+    "continue": "Continue the conversation",
+    "back": "Back to the porch"
+  },
+  "whereTo": {
+    "heading": "Where to?",
+    "subtitle": "Everything is a short walk from the porch.",
+    "porch": { "name": "The porch", "detail": "Home base" },
+    "journey": { "name": "Journey", "detail": "The pond" },
+    "stories": { "name": "Stories", "detail": "The study" },
+    "consulting": { "name": "Consulting", "detail": "The studio" },
+    "meet": { "name": "Meet Lori", "detail": "A short hello" },
+    "bag": { "name": "Your bag", "empty": "Empty" },
+    "neighborhood": { "name": "The neighborhood", "detail": "Back to the start" }
+  },
+  "contact": {
+    "heading": "Say hello",
+    "email": "hello@soulrhythm.example",
+    "instagram": "https://instagram.com",
+    "facebook": "https://facebook.com",
+    "youtube": "https://youtube.com"
+  },
+  "visit": {
+    "heading": "About your visit",
+    "body": "This browser remembers only that you've been here and which spaces you've visited, so it can welcome you back. Nothing else is tracked.",
+    "forget": "Forget my visit"
+  },
+  "checkout": {
+    "heading": "Your order is on its way. Thank you for supporting Soul Rhythm.",
+    "continue": "Continue exploring Stories",
+    "porch": "Return to the porch",
+    "note": "Real checkout powered by Shopify/WooCommerce in the full build."
+  },
+  "editor": {
+    "banner": "This is a preview of how you'd edit your own content. In the real build this is your CMS.",
+    "link": "See how you'd edit this →"
+  },
+  "sounds": {
+    "off": "Sounds off",
+    "on": "Sounds on"
+  }
+}
