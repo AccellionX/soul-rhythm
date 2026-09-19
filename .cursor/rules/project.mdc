@@ -1,0 +1,10 @@
+---
+description: Soul Rhythm static prototype conventions
+alwaysApply: true
+---
+
+- Static prototype: plain HTML, CSS, vanilla JS only. No frameworks, no npm, no build step.
+- Single-page app: index.html, styles.css, app.js. Screens switch via JS, no reloads.
+- Use the exact copy text from BRIEF.md, don't rewrite it.
+- Mobile-first, every interaction works by tap, respect prefers-reduced-motion.
+- Keep code simple. Don't add features not in the brief.
